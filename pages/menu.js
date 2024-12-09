@@ -1,7 +1,6 @@
 "use client";
 
 import Head from "next/head";
-import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
@@ -37,7 +36,7 @@ export default function Menu() {
           animate="visible"
           variants={{
             visible: {
-              transition: { staggerChildren: 0.2 }, // Stagger animations for cards
+              transition: { staggerChildren: 0.2 },
             },
           }}
         >
@@ -47,16 +46,16 @@ export default function Menu() {
               description:
                 "A rich combination of traditional Indian dishes served with rice and naan, garnished with a touch of love.",
               price: "$15.99",
-              imgSrc: "icons/vegetarian-icon.svg",
-              alt: "Vegetarian Icon",
+              imgSrc:
+                "https://t4.ftcdn.net/jpg/02/75/39/13/360_F_275391367_Hro3Ql1iFsCNtd86zWYuqa0Qe5cc7goE.jpg",
             },
             {
               title: "Spiced Lentil Soup",
               description:
                 "A hearty, spiced lentil soup infused with cumin and coriander, perfect for warming up on a chilly day.",
               price: "$7.99",
-              imgSrc: "icons/soup-icon.svg",
-              alt: "Soup Icon",
+              imgSrc:
+                "https://challenge22.com/wp-content/uploads/Indian-Lentil-Soup-1.jpg",
             },
             {
               title: "Paneer Butter Masala",
@@ -65,34 +64,30 @@ export default function Menu() {
               price: "$12.99",
               imgSrc:
                 "https://myfoodstory.com/wp-content/uploads/2021/07/restaurant-style-paneer-butter-masala-2.jpg",
-              alt: "Paneer Icon",
             },
             {
               title: "Chole Bhature",
               description:
                 "Spicy chickpea curry paired with fluffy, deep-fried bread, a classic favorite.",
               price: "$11.99",
-              imgSrc: "icons/chole-icon.svg",
-              alt: "Chole Icon",
+              imgSrc:
+                "https://i.ytimg.com/vi/wAv-mFU7eus/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD4QzhyIzsn3bEMvu2NXaXRKS7qgg",
             },
           ].map((item, index) => (
             <motion.div
               key={index}
               className="menu-card"
+              style={{
+                backgroundImage: `url(${item.imgSrc})`,
+              }}
               variants={cardVariants}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="card-overlay"></div>
-              <h2 className="menu-item-title">{item.title}</h2>
-              <p className="menu-item-description">{item.description}</p>
-              <p className="menu-item-price">{item.price}</p>
-              <img
-                src={item.imgSrc}
-                alt={item.alt}
-                width={50}
-                height={50}
-                className="menu-icon"
-              />
+              <div className="card-content">
+                <h2 className="menu-item-title">{item.title}</h2>
+                <p className="menu-item-description">{item.description}</p>
+                <p className="menu-item-price">{item.price}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
