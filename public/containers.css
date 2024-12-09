@@ -1,0 +1,52 @@
+.quadrants {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(400px, 1fr)); /* Reduced min-height */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    padding: 0;
+    margin: 0;
+    gap: 0;
+}
+
+.quadrant1, .quadrant2, .quadrant3, .quadrant4 {
+    background-size: cover;
+    background-position: center;
+    border: none;
+    padding: 20px;
+    text-align: center;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100%; /* Full width for each quadrant */
+    min-height: 100%; /* Full height for each quadrant */
+    box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+.linka {
+    color: #fff;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Hover effect with full opacity */
+.quadrant1:hover, .quadrant2:hover, .quadrant3:hover, .quadrant4:hover {
+    opacity: 1;
+}
+
+.quadrant1 {
+    background-image: url('pexels-vanmalidate-784633.jpg');
+}
+
+.quadrant2 {
+    background-image: url('pexels-pinaki-panda-3019803-28962266.jpg');
+}
+
+.quadrant3 {
+    background-image: url('pexels-alejandro-barron-21404-96715.jpg');
+}
+
+.quadrant4 {
+    background-image: url('pexels-marvin-ozz-1297854-2474661.jpg');
+}
